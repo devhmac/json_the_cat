@@ -3,12 +3,6 @@ const request = require('request');
 
 const breedInput = cliArg[0];
 
-// const breedDescription = fetchBreedDescription('siberian', (error, description) => {
-
-
-
-// });
-
 const fetchBreedDescription = (breedName, callback) => {
 
   request('https://api.thecatapi.com/v1/breeds/search?q=' + breedName, (error, response, body) => {
