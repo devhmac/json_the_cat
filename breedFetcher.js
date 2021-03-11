@@ -22,7 +22,10 @@ const fetchBreedDescription = (breedName, callback) => {
       callback(error);
       return;
     }
+    //prev 2 errors related to not successfuly searching via the api
+
     const returnData = JSON.parse(body); //it is now an object in an array
+    // if we search successfully, but our api search returns no results
     if (returnData.length === 0) {
       error = (`Your search ${breedInput} did not return any results`);
       callback(error);
