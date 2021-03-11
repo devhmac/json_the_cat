@@ -27,7 +27,7 @@ const fetchBreedDescription = (breedName, callback) => {
     const returnData = JSON.parse(body); //it is now an object in an array
     // if we search successfully, but our api search returns no results
     if (returnData.length === 0) {
-      error = (`Your search ${breedInput} did not return any results`);
+      error = (`Your search did not return any results`);
       callback(error);
       return;
     }
