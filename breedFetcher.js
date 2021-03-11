@@ -30,4 +30,5 @@ const fetchBreedDescription = (breedName, callback) => {
   });
 };
 
-module.exports = { fetchBreedDescription };
+
+module.exports = { fetchBreedDescription }
