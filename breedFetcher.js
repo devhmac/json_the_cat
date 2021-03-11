@@ -18,20 +18,19 @@ const fetchBreedDescription = (breedName, callback) => {
       return;
     }
     if (response.statusCode !== 200) {
-      console.log(`your Status code was ${response.statusCode} the search was not completed, there may be something wrong with the site`);
+      error = (`your Status code was ${response.statusCode} the search was not completed, there may be something wrong with the site`);
       callback(error);
       return;
     }
     const returnData = JSON.parse(body); //it is now an object in an array
     if (returnData.length === 0) {
-      console.log(`Your search ${breedInput} did not return any results`);
+      error = (`Your search ${breedInput} did not return any results`);
       callback(error);
       return;
     }
-    callback(returnData[0].description); //returning the description key value from the first element in the returnData array
+    callback(error, returnData[0].description); //returning the description key value from the first element in the returnData array
     //console.log(typeof returnData) // is now an object after the JSON.parse();
-
-  })
+  });
 };
 
-module.exports = { fetchBreedDescription }
+module.exports = { fetchBreedDescription };
