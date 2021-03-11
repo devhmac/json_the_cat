@@ -28,7 +28,7 @@ const fetchBreedDescription = (breedName, callback) => {
       callback(error);
       return;
     }
-    return returnData[0]['description']; //returning the description key value from the first element in the returnData array
+    callback(returnData[0].description); //returning the description key value from the first element in the returnData array
     //console.log(typeof returnData) // is now an object after the JSON.parse();
 
   })
